@@ -65,6 +65,20 @@ export const getCookie = name => {
 export const deleteCookie = name => {
   setCookie(name, '', -1);
 };
+
+// 获取get上的参数
+export const getSearchArg = argName => {
+  let arr = window.location.href.split("?")[1];
+  let argArr = arr.split("&");
+  for (let i = 0; i < argArr.length; i++){
+    let smallArgArr = argArr[i].split("=");
+    if (smallArgArr[0] === argName){
+      return decodeURIComponent(smallArgArr[1]);
+    }
+  }
+  return "";
+};
+
 // 判断闰年 true
 export const checkLeapYear = year => {
   return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
