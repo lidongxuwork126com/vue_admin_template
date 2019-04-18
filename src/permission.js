@@ -40,7 +40,6 @@ router.beforeEach((to, from, next) => {
           // const roles = res.data.role;
           const roles = ['admin'];
           store.dispatch("GenerateRoutes", {roles}).then(()=>{
-            console.log(store.getters.addRouters);
             router.addRoutes(store.getters.addRouters);
             // hack 方法 确保addRoutes已完成
             next({...to, replace: true})
