@@ -11,11 +11,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/news': {
-        target: 'http://lidongxu.d1.natapp.cc/tianluo/public',
+        target: 'http://localhost:801/tianluo/public',
         changeOrigin: true
       },
       '/api': {
-        target: 'http://lidongxu.d1.natapp.cc/tianluo/public',
+        target: 'http://localhost:801/tianluo/public',
         changeOrigin: true
       }
     },
